@@ -83,7 +83,7 @@ Real-time assembly using Nanopore sequencing data for microbial communities
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Introduction}
+\section{Introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{frame}{Genome sequencing}
 % \begin{center}
@@ -114,12 +114,12 @@ Real-time assembly using Nanopore sequencing data for microbial communities
 %\end{itemize}
 %\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%{
-%\setbeamertemplate{navigation symbols}{}
-%\setbeamertemplate{background canvas}{\includegraphics[width = \paperwidth]{figures/nanopore.jpg}}
-%\begin{frame}[plain]
-%\end{frame}
-%}
+{
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{background canvas}{\includegraphics[width = \paperwidth]{figures/nanopore.jpg}}
+\begin{frame}[plain]
+\end{frame}
+}
 %
 %{
 %\setbeamertemplate{navigation symbols}{}
@@ -128,6 +128,14 @@ Real-time assembly using Nanopore sequencing data for microbial communities
 %\end{frame}
 %}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Real-time analysis using Nanopore streaming data}
+  \begin{center}
+  \includegraphics[width=0.6\textwidth]{realtime.jpg}  
+   
+ \vspace*{0.3cm}
+Cao et al, 2016. DOI:10.1186/s13742-016-0137-2
+ \end{center}
+\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Real-time scaffolding microbial genomes}
@@ -263,18 +271,27 @@ Wick et al 2017.  DOI:10.1371/journal.pcbi.1005595
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Nodes binning}
-
+\begin{frame}{Binning contigs}
+\begin{itemize}
+	\item MetaVelvet: length-weighted kmer frequency distribution
+		\begin{figure}[!hpb]
+		\centering
+		\includegraphics[width=.45\textwidth]{figures/metavelvet.jpg}
+		\end{figure}
+	\item Using external tools: metabat2, maxbin.
+\end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Graph resolving}
-
-\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Bridging contigs}
 \begin{center}
  \includegraphics[height=.8\textheight]{gapfilling.jpg}  
+\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Graph resolving}
+\begin{center}
+ \includegraphics[height=.7\textheight]{figures/bridge_merging.pdf}  
 \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -308,23 +325,23 @@ Wick et al 2017.  DOI:10.1371/journal.pcbi.1005595
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Issues}
 \begin{itemize}
-\item Graph quality and pre-processing is important 
+\item DBG assembly graph quality and pre-processing is important 
 	\begin{itemize}
-		\item bin and multiplicity
-		\item dead-ends
+		\item high Illumina sequencing coverage
+		\item binning \& multiplicity estimation
 	\end{itemize}
-\item Post-processing is needed for higher quality assembly
+\item Nanopore data is used for bridging only
 \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%{
-%\setbeamertemplate{navigation symbols}{}
-%\setbeamertemplate{background canvas}{\includegraphics[width = \paperwidth]{figures/group.jpg}}
-%\begin{frame}[plain]
-%\end{frame}
-%}
+{
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{background canvas}{\includegraphics[width = \paperwidth]{figures/group.jpg}}
+\begin{frame}[plain]
+\end{frame}
+}
 
 \end{document}
