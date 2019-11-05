@@ -128,13 +128,21 @@ Real-time assembly using Nanopore sequencing data for microbial communities
 %\end{frame}
 %}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Real-time analysis using Nanopore streaming data}
-  \begin{center}
-  \includegraphics[width=0.6\textwidth]{realtime.jpg}  
-   
- \vspace*{0.3cm}
-Cao et al, 2016. DOI:10.1186/s13742-016-0137-2
- \end{center}
+\begin{frame}{Hybrid assembly using Nanopore streaming data}
+\begin{itemize}
+\item Genome assemblies using only short-reads are usually fragmented.
+  \begin{itemize}
+  \item positional information are usually irretrievable
+  \item could be resolved by nanopore long-reads 
+  \end{itemize} 
+\item[$\Rightarrow$] hybrid assembly: complete the genome with long reads
+\item Existing assemblers can only work after sequencing has completed
+  \begin{itemize}
+  \item longer turn-around time
+  \item	lack of interactive controlling
+  \end{itemize} 
+\item[$\Rightarrow$] real-time assembly is desired
+\end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -201,9 +209,9 @@ Cao, Nguyen et al, 2017.  DOI:10.1038/ncomms14515
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{\emph{npBarcode} -- demultiplexing nanopore reads in real time}
-%\begin{center}
-%\animategraphics[loop,autoplay,height=.75\textheight]{12}{animations/npreader/npreader-}{0}{300}
-%\end{center}
+\begin{center}
+\animategraphics[loop,autoplay,height=.75\textheight]{12}{animations/npreader/npreader-}{0}{300}
+\end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -296,31 +304,60 @@ Wick et al 2017.  DOI:10.1371/journal.pcbi.1005595
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{\emph{npGraph} GUI}
-%\begin{center} 
-%	\animategraphics[loop,autoplay,width=.8\textwidth]{12}{animations/npgraph/npgraph-}{0}{400}
-%\end{center}
+\begin{center} 
+	\animategraphics[loop,autoplay,width=.8\textwidth]{12}{animations/npgraph/npgraph-}{0}{400}
+\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{\emph{npGraph} on microbial isolates}
-%\begin{figure}[!hpb]
-%\centering
-%\animategraphics[autoplay,height=.4\textheight]{20}{animations/kp_ntuh/images_}{00001}{00327}
-%~
-%\animategraphics[autoplay,height=.4\textheight]{20}{animations/ab30/images_}{00001}{00350}
-%\\ \vfill
-%\animategraphics[autoplay,height=.4\textheight]{20}{animations/kp_mgh/images_}{00001}{00336}
-%~
-%\animategraphics[autoplay,height=.4\textheight]{20}{animations/shigella/images_}{00001}{00400}
-%\end{figure}
+\begin{figure}[!hpb]
+\centering
+\animategraphics[autoplay,height=.4\textheight]{20}{animations/kp_ntuh/images_}{00001}{00327}
+~
+\animategraphics[autoplay,height=.4\textheight]{20}{animations/ab30/images_}{00001}{00350}
+\\ \vfill
+\animategraphics[autoplay,height=.4\textheight]{20}{animations/kp_mgh/images_}{00001}{00336}
+~
+\animategraphics[autoplay,height=.4\textheight]{20}{animations/shigella/images_}{00001}{00400}
+\end{figure}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\emph{npGraph} on microbial isolates}
+\centering
+ \includegraphics[height=.6\textheight]{figures/npgraph_uni.png}  
+~
+ \includegraphics[height=.6\textheight]{figures/response.png}  
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{\emph{npGraph} on metagenomics mock communities}
-%\begin{figure}[!hpb]
-%\subcaptionbox{Zymo Even}{\animategraphics[autoplay,width=.48\textwidth]{12}{animations/zymoeven/images_}{00001}{00600}}%
-%\hfill
-%\subcaptionbox{Zymo Log}{\animategraphics[autoplay,width=.48\textwidth]{12}{animations/zymolog/images_}{00050}{00650}}%
-%\end{figure}
+\begin{figure}[!hpb]
+\subcaptionbox{Zymo Even: $41$Mbp $\rightarrow$ $31.4$Mbp}{\animategraphics[autoplay,width=.48\textwidth]{12}{animations/zymoeven/images_}{00001}{00600}}%
+\hfill
+\subcaptionbox{Zymo Log: $22.5$Mbp $\rightarrow$ $14.7$Mbp}{\animategraphics[autoplay,width=.48\textwidth]{12}{animations/zymolog/images_}{00050}{00650}}%
+\end{figure}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\emph{npGraph} on metagenomics mock communities}
+\begin{table}[ht]
+\begin{center}
+\caption{NGA50 improvement from metaSPAdes to npGraph}
+\begin{tabular}{|l|r|r|r|r|}
+\hline
+\multirow{2}{*}{\textbf{Community}} & \multicolumn{2}{|c|}{\textbf{ZymoEven}} & \multicolumn{2}{|c|}{\textbf{ZymoLog}} \\ \cline{2-5}
+& metaSPAdes & npGraph & metaSPAdes & npGraph \\ \hline
+\emph{B.~subtilis} & $23,386$ & $382,368$ & $35,390$ & $433,078$ \\ \hline
+\emph{E.~coli} & $34,776$ & $1,108,989$ & $-$ & $-$ \\ \hline
+\emph{E.~faecalis} & $23,340$ & $217,908$ & $-$ & $-$ \\ \hline
+\emph{L.~monocytogenes} & $26,480$ & $520,012$ & $23,146$ & $130,284$ \\ \hline
+\emph{P.~aeruginosa} & $59,372$ & $1,753,658$ & $161,816$ & $444,495$ \\ \hline
+\emph{S.~aureus} & $26,058$ & $175,908$ & $-$ &$-$ \\ \hline
+\emph{S.~cerevisiae} & $-$ & $-$ & $-$ & $-$ \\ \hline
+\emph{S.~enterica} & $33,363$ & $4,242,458$ & $-$ & $-$ \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Issues}
@@ -331,6 +368,24 @@ Wick et al 2017.  DOI:10.1371/journal.pcbi.1005595
 		\item binning \& multiplicity estimation
 	\end{itemize}
 \item Nanopore data is used for bridging only
+\item \url{https://github.com/hsnguyen/assembly}
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Conclusion}
+\begin{itemize}
+\item Real-time hybrid assembly scenarios:
+	\begin{itemize}
+		\item complete genome assembly interactively
+		\item minimize the amount of nanopore sequencing data required
+		\item reduce turn-around time for downstream analysis 
+	\end{itemize}
+\item Not recommended:
+	\begin{itemize}
+		\item poor quality pre-assembly graph
+		\item abundance of nanopore data 
+	\end{itemize}
+\item Next step: real-time ONT-only assembly?!
 \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
