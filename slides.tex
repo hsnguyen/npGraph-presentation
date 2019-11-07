@@ -67,7 +67,7 @@ Real-time assembly using Nanopore sequencing data for microbial communities
 }
 \author[Son Hoang Nguyen, The University of Queensland]{Son Hoang Nguyen \\ \footnotesize{\texttt{s.nguyen@uq.edu.au}}
 }
-\date{Nov, 2019}
+\date{CSHL Genome Informatics 2019}
 \institute[IMB,UQ]{\large{Institute for Molecular Bioscience \\ The University of Queensland}}
 
 %\setbeamertemplate{footline}[frame number]
@@ -281,7 +281,7 @@ Wick et al 2017.  DOI:10.1371/journal.pcbi.1005595
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Binning contigs}
 \begin{itemize}
-	\item MetaVelvet: length-weighted kmer frequency distribution
+	\item MetaVelvet (Namiki et al.): length-weighted kmer frequency distribution
 		\begin{figure}[!hpb]
 		\centering
 		\includegraphics[width=.45\textwidth]{figures/metavelvet.jpg}
@@ -324,17 +324,21 @@ Wick et al 2017.  DOI:10.1371/journal.pcbi.1005595
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{\emph{npGraph} on microbial isolates}
 \centering
- \includegraphics[height=.6\textheight]{figures/npgraph_uni.png}  
+ \includegraphics[height=.5\textheight]{figures/npgraph_uni.png}  
 ~
- \includegraphics[height=.6\textheight]{figures/response.png}  
+ \includegraphics[height=.5\textheight]{figures/response.png}  
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{\emph{npGraph} on metagenomics mock communities}
 \begin{figure}[!hpb]
-\subcaptionbox{Zymo Even: $41$Mbp $\rightarrow$ $31.4$Mbp}{\animategraphics[autoplay,width=.48\textwidth]{12}{animations/zymoeven/images_}{00001}{00600}}%
+\subcaptionbox{Zymo Even
+%: $41$Mbp $\rightarrow$ $31.4$Mbp
+}{\animategraphics[autoplay,width=.48\textwidth]{12}{animations/zymoeven/images_}{00001}{00600}}%
 \hfill
-\subcaptionbox{Zymo Log: $22.5$Mbp $\rightarrow$ $14.7$Mbp}{\animategraphics[autoplay,width=.48\textwidth]{12}{animations/zymolog/images_}{00050}{00650}}%
+\subcaptionbox{Zymo Log
+%: $22.5$Mbp $\rightarrow$ $14.7$Mbp
+}{\animategraphics[autoplay,width=.48\textwidth]{12}{animations/zymolog/images_}{00050}{00650}}%
 \end{figure}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
